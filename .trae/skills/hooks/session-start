@@ -43,7 +43,10 @@ session_context="<EXTREMELY_IMPORTANT>\nYou have superpowers.\n\n**Below is the 
 #
 # Uses printf instead of heredoc to work around bash 5.3+ heredoc hang.
 # See: https://github.com/obra/superpowers/issues/571
-if [ -n "${CURSOR_PLUGIN_ROOT:-}" ]; then
+if [ -n "${TRAE_PLUGIN_ROOT:-}" ]; then
+  # Trae IDE platform - uses SDK standard format
+  printf '{\n  "additionalContext": "%s"\n}\n' "$session_context"
+elif [ -n "${CURSOR_PLUGIN_ROOT:-}" ]; then
   # Cursor sets CURSOR_PLUGIN_ROOT (may also set CLAUDE_PLUGIN_ROOT)
   printf '{\n  "additional_context": "%s"\n}\n' "$session_context"
 elif [ -n "${CLAUDE_PLUGIN_ROOT:-}" ] && [ -z "${COPILOT_CLI:-}" ]; then
