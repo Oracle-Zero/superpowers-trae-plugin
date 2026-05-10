@@ -1,0 +1,96 @@
+{
+  "name": "superpowers-trae",
+  "displayName": "Superpowers - Professional AI Development Skills",
+  "description": "Professional AI development skills for Trae IDE: TDD, systematic debugging, brainstorming, code review, and proven engineering workflows.",
+  "version": "5.1.0",
+  "publisher": "obra",
+  "author": {
+    "name": "Jesse Vincent",
+    "email": "jesse@fsck.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/obra/superpowers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/obra/superpowers.git"
+  },
+  "icon": "assets/superpowers-small.png",
+  "galleryBanner": {
+    "color": "#1a1a2e",
+    "theme": "dark"
+  },
+  "categories": [
+    "AI",
+    "Education",
+    "Other"
+  ],
+  "keywords": [
+    "AI",
+    "skills",
+    "TDD",
+    "debugging",
+    "code-review",
+    "brainstorming",
+    "agentic",
+    "superpowers",
+    "trae"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "superpowers.showSkills",
+        "title": "Show Superpowers Skills",
+        "category": "Superpowers"
+      },
+      {
+        "command": "superpowers.installToProject",
+        "title": "Install Superpowers Skills to Current Project",
+        "category": "Superpowers"
+      },
+      {
+        "command": "superpowers.updateSkills",
+        "title": "Update Superpowers Skills from GitHub",
+        "category": "Superpowers"
+      }
+    ],
+    "configuration": {
+      "title": "Superpowers",
+      "properties": {
+        "superpowers.autoInstall": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically install skills to new projects when opened"
+        },
+        "superpowers.autoUpdate": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically check for skill updates from GitHub on startup"
+        },
+        "superpowers.githubRepo": {
+          "type": "string",
+          "default": "obra/superpowers",
+          "description": "GitHub repository to sync skills from (owner/repo)"
+        },
+        "superpowers.githubBranch": {
+          "type": "string",
+          "default": "main",
+          "description": "GitHub branch to sync skills from"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^2.22.0"
+  },
+  "dependencies": {}
+}

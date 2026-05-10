@@ -1,0 +1,117 @@
+{
+  "name": "superpowers-trae",
+  "displayName": "Superpowers - AI Development Skills",
+  "description": "Professional AI development skills for Trae IDE: TDD, systematic debugging, brainstorming, code review, and proven engineering workflows",
+  "version": "5.1.0",
+  "publisher": "obra",
+  "author": {
+    "name": "Jesse Vincent",
+    "email": "jesse@fsck.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/obra/superpowers",
+  "repository": "https://github.com/obra/superpowers",
+  "icon": "assets/app-icon.png",
+  "categories": [
+    "AI",
+    "Education",
+    "Other"
+  ],
+  "keywords": [
+    "AI",
+    "skills",
+    "TDD",
+    "debugging",
+    "code-review",
+    "brainstorming",
+    "agentic",
+    "superpowers"
+  ],
+  "engines": {
+    "trae": "^1.0.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./trae-plugin.js",
+  "contributes": {
+    "skills": [
+      {
+        "name": "brainstorming",
+        "path": "./skills/brainstorming/SKILL.md",
+        "description": "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
+      },
+      {
+        "name": "systematic-debugging",
+        "path": "./skills/systematic-debugging/SKILL.md",
+        "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes. Four phases: Root Cause Investigation → Pattern Analysis → Hypothesis and Testing → Implementation."
+      },
+      {
+        "name": "test-driven-development",
+        "path": "./skills/test-driven-development/SKILL.md",
+        "description": "Use when implementing any feature or bugfix, before writing implementation code. Write the test first. Watch it fail. Write minimal code to pass."
+      },
+      {
+        "name": "writing-plans",
+        "path": "./skills/writing-plans/SKILL.md",
+        "description": "Use when you have a spec or requirements for a multi-step task, before touching code. Write comprehensive implementation plans assuming the engineer has zero context."
+      },
+      {
+        "name": "executing-plans",
+        "path": "./skills/executing-plans/SKILL.md",
+        "description": "Use when you have a written implementation plan to execute in a separate session with review checkpoints."
+      },
+      {
+        "name": "subagent-driven-development",
+        "path": "./skills/subagent-driven-development/SKILL.md",
+        "description": "Use when executing implementation plans with independent tasks in the current session. Fresh subagent per task + two-stage review (spec then quality) = high quality, fast iteration."
+      },
+      {
+        "name": "verification-before-completion",
+        "path": "./skills/verification-before-completion/SKILL.md",
+        "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims."
+      },
+      {
+        "name": "requesting-code-review",
+        "path": "./skills/requesting-code-review/SKILL.md",
+        "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements."
+      },
+      {
+        "name": "receiving-code-review",
+        "path": "./skills/receiving-code-review/SKILL.md",
+        "description": "Use when receiving code review feedback, before implementing suggestions, especially if feedback seems unclear or technically questionable."
+      },
+      {
+        "name": "dispatching-parallel-agents",
+        "path": "./skills/dispatching-parallel-agents/SKILL.md",
+        "description": "Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies."
+      },
+      {
+        "name": "using-git-worktrees",
+        "path": "./skills/using-git-worktrees/SKILL.md",
+        "description": "Use when starting any new development work that needs isolation from current workspace or before executing implementation plans."
+      },
+      {
+        "name": "finishing-a-development-branch",
+        "path": "./skills/finishing-a-development-branch/SKILL.md",
+        "description": "Use when implementation is complete, all tests pass, and you need to decide how to integrate the work."
+      },
+      {
+        "name": "writing-skills",
+        "path": "./skills/writing-skills/SKILL.md",
+        "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment."
+      },
+      {
+        "name": "using-superpowers",
+        "path": "./skills/using-superpowers/SKILL.md",
+        "description": "Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions."
+      }
+    ],
+    "hooks": [
+      {
+        "event": "sessionStart",
+        "command": "node trae-plugin.js session-start"
+      }
+    ]
+  }
+}
